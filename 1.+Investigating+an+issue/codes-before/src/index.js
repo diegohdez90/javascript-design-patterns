@@ -2,7 +2,7 @@ var Logger = require("./Logger");
 var Customer = require("./Customer");
 var Product = require("./Product");
 
-var logger = new Logger();
+var logger = new Logger().getnstance();
 
 logger.log("starting app...");
 

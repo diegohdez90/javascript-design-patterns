@@ -1,6 +1,6 @@
 var Logger = require("./Logger");
 
-var logger = new Logger();
+var logger = new Logger().getnstance();
 
 class Product {
   constructor(name, inventory = []) {
