@@ -19,6 +19,16 @@ class Customer {
   addItemToList(item) {
     this._cartItems.push(item);
   }
+
+  clone() {
+    var proto = Object.getPrototypeOf(this)
+    var cloned = Object.create(proto)
+    cloned._name = this._name
+    cloned._cartItems = [...this._cartItems]
+
+    return cloned
+
+  }
 }
 
 module.exports = Customer;
