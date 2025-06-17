@@ -1,8 +1,6 @@
-var Logger = require("./Logger");
+var logger = require("./Logger");
 var Customer = require("./Customer");
 var Product = require("./Product");
-
-var logger = new Logger().getInstance();
 
 logger.log("starting app...");
 
