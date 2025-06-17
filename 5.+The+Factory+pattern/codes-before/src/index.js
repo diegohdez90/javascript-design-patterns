@@ -1,8 +1,9 @@
-var Customer = require("./Customer");
-var Employee = require("./Employee");
+var personFactory = require('./personFactory')
 
-var codelicks = new Customer("Codelicks", 500);
-var john = new Employee("John", 900, "Something");
+var codelicks = personFactory("Codelicks", 500);
+var john = new personFactory("John", 900, "employee", "Something");
+
+john.payDay(300)
 
 console.log(codelicks.toString());
 console.log(john.toString());
