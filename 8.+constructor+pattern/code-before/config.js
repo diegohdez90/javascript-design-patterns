@@ -1,21 +1,19 @@
 export class Config {
-  constructor() {
-    this.settings = {};
+  constructor(setup) {
+    const settings = {};
+    const configurator = {
+      set: (key, value) => {
+        settings[key] = value
+      },
+      setMultiple: (configObj) => {
+        Object.assign(settings, configObj)
+      }
+    };
+    setup(configurator);
+    Object.freeze(settings)
+    this.get = (key) => settings[key]
+    this.getAll = () =>({...settings})
   }
 
-  set(key, value) {
-    this.settings[key] = value;
-  }
 
-  setMultiple(configObj) {
-    Object.assign(this.settings, configObj);
-  }
-
-  get(key) {
-    return this.settings[key];
-  }
-
-  getAll() {
-    return { ...this.settings };
-  }
 }
